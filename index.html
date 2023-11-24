@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staged Login Form</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="form-container" id="loginForm">
+    
+    <!-- Stage 1: Name -->
+    <div id="stage1" class="active">
+        <h2>Register:</h2>
+        <div class="form-field">
+            <label for="firstName">First name:</label>
+            <input type="text" id="firstName" name="firstName" placeholder="First name...">
+            <label for="firstName">Last name:</label>
+            <input type="text" id="lastName" name="lastName" placeholder="Last name...">
+            <div class="button-container">
+                <!-- Back button (this will only show on the second stage) -->
+                <button type="button" id="backButton" onclick="goToStage1()" style="display: none;">Back</button>
+                <!-- Next/Finish Now button -->
+                <button type="button" id="nextButton" onclick="goToStage2()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Stage 2: Email and Birthday (hidden by default) -->
+    <div id="stage2" class="form-stage">
+        <h2>About you:</h2>
+        <div class="form-field">
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Email...">
+            <label for="birthday">Birthday:</label>
+            <input type="date" id="birthday" name="birthday">
+            <div class="button-container">
+                <button type="button" onclick="goToStage1()">Back</button>
+                <button type="button" onclick="goToStage3()">Next</button>
+            </div>
+        </div>
+    </div>
+
+    
+    <!-- Stage 3: Radio Button -->
+    <div id="stage3" class="form-stage">
+        <h2>Do you like Dogs?</h2>
+        <div class="form-field radio-buttons-container">
+            <label>Please choose an option:</label>
+            <div>
+                <input type="radio" id="option1" name="preference" value="option1">
+                <label for="option1">Yes, obviously!</label>
+            </div>
+            <div>
+                <input type="radio" id="option2" name="preference" value="option2">
+                <label for="option2">Yes!</label>
+            </div>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="goToStage2()">Back</button>
+            <button type="button" onclick="goToStage4()">Next</button>
+        </div>
+    </div>
+
+
+    <!-- Stage 4: Larger Text Box -->
+    <div id="stage4" class="form-stage">
+        <h2>Your Message:</h2>
+        <div class="form-field textfield">
+            <label for="message">Your Message to me! :)</label>
+            <textarea id="message" name="message" rows="4" placeholder="Write your message here..."></textarea>
+        </div>
+        <div class="button-container">
+            <button type="button" onclick="goToStage3()">Back</button>
+            <button type="button" onclick="finishForm()">Finish Now</button>
+        </div>
+    </div>
+
+    <!-- Loading Animation Container -->
+    <div id="loadingAnimation" class="loading-container" >
+        <div class="loader"></div>
+    </div>
+
+    <!-- Thank You Stage -->
+    <div id="thankYouStage" class="form-stage" >
+        <!-- Placeholder SVG -->
+        <h2 class="centered-text">Thank You!</h2>
+        <div class="thank-you-svg">
+        <svg xmlns="http://www.w3.org/2000/svg" height="4em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{fill:#36bb8a}</style><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg>        </div>
+        <p class="centered-text">Your submission has been received.</p>
+    </div>
+
+
+    <!-- Progress Indicators -->
+    <div class="progress-indicators">
+        <div id="indicator1" class="active"></div>
+        <div id="indicator2"></div>
+        <div id="indicator3"></div>
+        <div id="indicator4"></div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

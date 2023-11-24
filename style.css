@@ -1,0 +1,236 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif;
+    background: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    transition: 0.3s ease-in-out; 
+}
+
+.form-container h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.form-container label {
+    color: #333;
+    margin-bottom: 5px;
+}
+
+
+.form-container input[type="text"],
+.form-container input[type="email"],
+.form-container input[type="date"] {
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    margin-bottom: 20px;
+    width: 100%; /* Full width of the form field */
+    box-sizing: border-box;
+}
+
+/* Specifically target the radio buttons' container for additional spacing */
+.form-container .radio-buttons-container {
+    margin-bottom: 20px;
+}
+
+/* Specifically target the radio buttons' container for additional spacing */
+.form-container .textfield {
+    margin-bottom: 20px;
+}
+
+/* Styles for the radio buttons */
+.form-container input[type="radio"] {
+    margin-right: 5px;
+}
+/* Styles for the textarea */
+.form-container textarea {
+    font-family: 'Arial', sans-serif; /* You can change this to any font you prefer */
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #333; /* Font color */
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    resize: vertical; /* Allow vertical resizing */
+}
+
+
+.form-container .button-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr; /* Create two columns */
+    gap: 10px; /* Space between buttons */
+}
+
+/* This will hide the back button by default and does not reserve space for it */
+.form-container #backButton {
+    display: none; /* Hide the back button initially */
+    grid-column: 1; /* Position the back button in the first column when visible */
+}
+
+/* The next button will always stay in the second column */
+.form-container #nextButton {
+    grid-column: 2; /* Position the next button in the second column */
+}
+
+
+.form-container button {
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Next/Finish Now button */
+.form-container button:nth-of-type(2) {
+    background-color: #36bb8a;
+    color: white;
+}
+
+.form-container button:nth-of-type(2):hover {
+    background-color: #31a47a;
+}
+
+/* Back button */
+.form-container button:nth-of-type(1) {
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.form-container button:nth-of-type(1):hover {
+    background-color: #e4e4e4;
+}
+
+
+/* Progress Indicators */
+.progress-indicators {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    animation-fill-mode: forwards; /* Keeps the element in the state of the last keyframe when the animation ends */
+}
+
+
+.progress-indicators div {
+    height: 15px;
+    width: 15px;
+    background-color: #dddddd;
+    border-radius: 50%;
+    display: inline-block;
+    margin: 0 5px;
+    transition: background-color 0.3s ease-in-out; /* Animate the background color change */
+}
+
+.progress-indicators div.active {
+    background-color: #b6b6b6;
+}
+
+@keyframes slideUpFadeOut {
+    0% {
+        opacity: 1;
+        /* transform: translateY(0); */
+    }
+    100% {
+        opacity: 0;
+        /* transform: translateY(-20px); */
+    }
+}
+
+/* Class for completed progress indicators */
+.progress-indicators.completed div {
+    background-color: #36bb8a; /* Green color */
+    transition: background-color 1s ease-in-out; /* Animate the background color change */
+
+}
+
+
+
+/* Class to trigger the hiding animation */
+.hide-progress {
+    animation: slideUpFadeOut 0.5s ease-in-out;
+}
+
+
+.hidden {
+    display: none;
+}
+
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+    
+}
+
+/* Apply the fade-in animation to each form stage, loading container, and thank you stage */
+#stage1, #stage2, #stage3, #stage4, #loadingAnimation, #thankYouStage {
+    animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Initially hide the stages, loading container, and thank you stage */
+#stage1, #stage2, #stage3, #stage4, #loadingAnimation, #thankYouStage {
+    display: none;
+    opacity: 0;
+}
+
+/* When the element has the 'active' class, it fades in */
+#stage1.active, #stage2.active, #stage3.active, #stage4.active, #loadingAnimation.active, #thankYouStage.active {
+    display: block;
+    opacity: 1;
+}
+
+/* Initially hide the loader */
+#loadingAnimation {
+    display: none;
+    opacity: 0;
+}
+
+/* When loader has the 'active' class, it fades in */
+#loadingAnimation.active {
+    display: flex; /* Flex to center the loader */
+    opacity: 1;
+}
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px; /* Adjust as necessary */
+}
+
+.loader {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #36bb8a;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.thank-you-svg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px; /* Space below the SVG */
+}
+
+.centered-text {
+    text-align: center;
+}
