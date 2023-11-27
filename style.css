@@ -234,3 +234,26 @@ body {
 .centered-text {
     text-align: center;
 }
+.x-axis-scrollabale-div {
+    scrollbar-width: none;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    overflow-x: scroll;
+    width: 100%;
+  }
+.x-axis-scrollabale-ul {
+    display: flex;
+    flex-wrap: nowrap;
+    white-space: nowrap;
+    list-style: none;
+    width: 100%;
+    padding: 0px;
+    margin: 0px;
+  }
+.x-axis-scrollabale-li {
+    scroll-snap-align: center;
+    display: flex;
+    -moz-box-pack: center;
+    justify-content: center;
+    min-width: 273px;
+}
