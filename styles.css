@@ -60,7 +60,12 @@ nav {
     /* Additional styling for the counter */
 }
 
-
+.cart-item {
+    border: 1px solid #ddd;
+    margin: 10px 0;
+    padding: 10px;
+    /* Add more styling as needed */
+}
 
 
 /* TABLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
