@@ -121,3 +121,16 @@ function updateCartCounter() {
     }
 }
 
+window.onscroll = function() {makeHeaderSticky()};
+
+var header = document.getElementById("mainHeader");
+var sticky = header.offsetTop;
+
+function makeHeaderSticky() {
+  if (window.scrollY > sticky) {
+    header.classList.add("sticky");
+  } else {
+    header.classList.remove("sticky");
+  }
+}
+
