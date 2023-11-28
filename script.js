@@ -12,12 +12,33 @@ let cartItems = {}; // Object to store item titles and their quantities
 function populateTable() {
     const table = document.getElementById('documentsTable');
     const mockupData = [
-        { title: 'Haftpflichtversicherung', description: 'Details zur Haftpflichtversicherung' },
-        { title: 'Kfz-Versicherung', description: 'Übersicht über Kfz-Versicherungsbedingungen' },
-        { title: 'Lebensversicherung', description: 'Informationen zur Lebensversicherung' },
-        { title: 'Unfallversicherung', description: 'Wichtige Informationen zur Unfallversicherung' },
-        { title: 'Krankenversicherung', description: 'Dokument über Krankenversicherungsleistungen' }
-    ];
+        { "title": "Haftpflichtversicherung", "description": "Details zur Haftpflichtversicherung", "category": "Auto" },
+        { "title": "Kfz-Versicherung", "description": "Übersicht über Kfz-Versicherungsbedingungen", "category": "Auto" },
+        { "title": "Lebensversicherung", "description": "Informationen zur Lebensversicherung", "category": "Lebensversicherung" },
+        { "title": "Unfallversicherung", "description": "Wichtige Informationen zur Unfallversicherung", "category": "Versicherung" },
+        { "title": "Krankenversicherung", "description": "Dokument über Krankenversicherungsleistungen", "category": "Versicherung" },
+        { "title": "Rechtsschutzversicherung", "description": "Details zur Rechtsschutzversicherung", "category": "Versicherung" },
+        { "title": "Gebäudeversicherung", "description": "Übersicht über Gebäudeversicherungspolicen", "category": "Versicherung" },
+        { "title": "Hausratversicherung", "description": "Informationen zur Hausratversicherung", "category": "Versicherung" },
+        { "title": "Berufsunfähigkeitsversicherung", "description": "Wichtige Fakten zur Berufsunfähigkeitsversicherung", "category": "Versicherung" },
+        { "title": "Reiseversicherung", "description": "Leitfaden für Reiseversicherungsoptionen", "category": "Versicherung" },
+        { "title": "Tierhalterhaftpflichtversicherung", "description": "Daten zur Tierhalterhaftpflichtversicherung", "category": "Versicherung" },
+        { "title": "Risikolebensversicherung", "description": "Erläuterungen zur Risikolebensversicherung", "category": "Lebensversicherung" },
+        { "title": "Pflegeversicherung", "description": "Übersicht über Pflegeversicherungsbedingungen", "category": "Versicherung" },
+        { "title": "Rentenversicherung", "description": "Informationen zur Rentenversicherung", "category": "Versicherung" },
+        { "title": "Gewerbeversicherung", "description": "Dokument über Gewerbeversicherungsleistungen", "category": "Versicherung" },
+        { "title": "Bauherrenhaftpflichtversicherung", "description": "Details zur Bauherrenhaftpflichtversicherung", "category": "Versicherung" },
+        { "title": "Fahrradversicherung", "description": "Übersicht über Fahrradversicherungsbedingungen", "category": "Versicherung" },
+        { "title": "Grundbesitzerhaftpflichtversicherung", "description": "Informationen zur Grundbesitzerhaftpflichtversicherung", "category": "Versicherung" },
+        { "title": "Erwerbsunfähigkeitsversicherung", "description": "Wichtige Fakten zur Erwerbsunfähigkeitsversicherung", "category": "Versicherung" },
+        { "title": "Reiserücktrittsversicherung", "description": "Leitfaden für Reiserücktrittsversicherungsoptionen", "category": "Versicherung" },
+        { "title": "Hundehaftpflichtversicherung", "description": "Daten zur Hundehaftpflichtversicherung", "category": "Versicherung" },
+        { "title": "Pferdehaftpflichtversicherung", "description": "Erläuterungen zur Pferdehaftpflichtversicherung", "category": "Versicherung" },
+        { "title": "Elementarschadenversicherung", "description": "Übersicht über Elementarschadenversicherungsbedingungen", "category": "Versicherung" },
+        { "title": "Betriebshaftpflichtversicherung", "description": "Informationen zur Betriebshaftpflichtversicherung", "category": "Versicherung" },
+        { "title": "Photovoltaikversicherung", "description": "Dokument über Photovoltaikversicherungsleistungen", "category": "Versicherung" }
+    ]
+        ;
 
     mockupData.forEach(doc => {
         addRowToTable(table, doc.title, doc.description);
