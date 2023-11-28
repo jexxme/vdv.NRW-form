@@ -16,7 +16,27 @@ function populateTable() {
         { title: 'Kfz-Versicherung', description: 'Übersicht über Kfz-Versicherungsbedingungen' },
         { title: 'Lebensversicherung', description: 'Informationen zur Lebensversicherung' },
         { title: 'Unfallversicherung', description: 'Wichtige Informationen zur Unfallversicherung' },
-        { title: 'Krankenversicherung', description: 'Dokument über Krankenversicherungsleistungen' }
+        { title: 'Krankenversicherung', description: 'Dokument über Krankenversicherungsleistungen' },
+        { title: 'Rechtsschutzversicherung', description: 'Details zur Rechtsschutzversicherung' },
+        { title: 'Gebäudeversicherung', description: 'Übersicht über Gebäudeversicherungspolicen' },
+        { title: 'Hausratversicherung', description: 'Informationen zur Hausratversicherung' },
+        { title: 'Berufsunfähigkeitsversicherung', description: 'Wichtige Fakten zur Berufsunfähigkeitsversicherung' },
+        { title: 'Reiseversicherung', description: 'Leitfaden für Reiseversicherungsoptionen' },
+        { title: 'Tierhalterhaftpflichtversicherung', description: 'Daten zur Tierhalterhaftpflichtversicherung' },
+        { title: 'Risikolebensversicherung', description: 'Erläuterungen zur Risikolebensversicherung' },
+        { title: 'Pflegeversicherung', description: 'Übersicht über Pflegeversicherungsbedingungen' },
+        { title: 'Rentenversicherung', description: 'Informationen zur Rentenversicherung' },
+        { title: 'Gewerbeversicherung', description: 'Dokument über Gewerbeversicherungsleistungen' },
+        { title: 'Bauherrenhaftpflichtversicherung', description: 'Details zur Bauherrenhaftpflichtversicherung' },
+        { title: 'Fahrradversicherung', description: 'Übersicht über Fahrradversicherungsbedingungen' },
+        { title: 'Grundbesitzerhaftpflichtversicherung', description: 'Informationen zur Grundbesitzerhaftpflichtversicherung' },
+        { title: 'Erwerbsunfähigkeitsversicherung', description: 'Wichtige Fakten zur Erwerbsunfähigkeitsversicherung' },
+        { title: 'Reiserücktrittsversicherung', description: 'Leitfaden für Reiserücktrittsversicherungsoptionen' },
+        { title: 'Hundehaftpflichtversicherung', description: 'Daten zur Hundehaftpflichtversicherung' },
+        { title: 'Pferdehaftpflichtversicherung', description: 'Erläuterungen zur Pferdehaftpflichtversicherung' },
+        { title: 'Elementarschadenversicherung', description: 'Übersicht über Elementarschadenversicherungsbedingungen' },
+        { title: 'Betriebshaftpflichtversicherung', description: 'Informationen zur Betriebshaftpflichtversicherung' },
+        { title: 'Photovoltaikversicherung', description: 'Dokument über Photovoltaikversicherungsleistungen' },
     ];
 
     mockupData.forEach(doc => {
