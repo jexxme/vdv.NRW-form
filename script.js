@@ -26,10 +26,17 @@ function populateTable() {
 
 function addRowToTable(table, title, description) {
     const row = table.insertRow();
-    const titleCell = row.insertCell(0);
-    const descCell = row.insertCell(1);
-    const actionCell = row.insertCell(2);
+    const checkCell = row.insertCell(0)
+    const titleCell = row.insertCell(1);
+    const descCell = row.insertCell(2);
+    const actionCell = row.insertCell(3);
 
+    const checkbox = document.createElement('input');
+    checkbox.type = "checkbox";
+    checkbox.name = "chkbox1";
+    checkbox.id = "cbid";
+
+    checkCell.appendChild(checkbox)
     titleCell.innerText = title;
     descCell.innerText = description;
 
