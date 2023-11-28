@@ -62,6 +62,7 @@ function addRowToTable(table, title, description) {
     descCell.innerText = description;
 
     actionCell.style.width = '24px';
+    checkCell.style.width = '10px';
 
     // Add to Cart Button with SVG
     const cartButton = document.createElement('button');
