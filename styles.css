@@ -1,0 +1,103 @@
+body {
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+
+
+/* NAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
+header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    height: 26px;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+
+.cart-container {
+    position: fixed;
+    /* or 'absolute' depending on your layout */
+    right: 20px;
+    /* Adjust as needed */
+    top: 20px;
+    /* Adjust as needed */
+    display: flex;
+    align-items: center;
+}
+
+#cartButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#cartButton svg {
+    width: 24px;
+    /* Adjust as needed */
+    height: 24px;
+    /* Adjust as needed */
+}
+
+#cartCounter {
+    margin-left: 10px;
+    /* Space between the icon and the counter */
+    /* Additional styling for the counter */
+}
+
+
+
+
+/* TABLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+
+
+/* Style for the 'Add to Cart' button */
+button.add-to-cart-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Style for the SVG inside the button */
+button.add-to-cart-btn svg {
+    fill: currentColor;
+    /* Or any color you want for the SVG */
+    width: 24px;
+    /* Adjust as needed */
+    height: 24px;
+    /* Adjust as needed */
+}
+
+
+
+main {
+    padding: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+}
