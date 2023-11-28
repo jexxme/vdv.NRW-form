@@ -78,11 +78,16 @@ function addToCart(itemTitle) {
         cartItems[itemTitle] = 1; // Add item with quantity 1 if not in cart
     }
     updateCartCounter();
+    localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    console.log(cartItems)
 }
 
 
 function updateCartCounter() {
     let totalCount = 0;
+    let storedCartItems = localStorage.getItem('cartItems');
+    let cartItems = storedCartItems ? JSON.parse(storedCartItems) : {};
+
     for (let key in cartItems) {
         totalCount += cartItems[key];
     }
@@ -95,3 +100,4 @@ function updateCartCounter() {
         cartCounter.style.display = 'none';
     }
 }
+
