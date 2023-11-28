@@ -51,6 +51,8 @@ function addRowToTable(table, title, description) {
     const titleCell = row.insertCell(1);
     const descCell = row.insertCell(2);
     const actionCell = row.insertCell(3);
+    const downloadCell = row.insertCell(4);
+    
 
     const checkbox = document.createElement('input');
     checkbox.type = "checkbox";
@@ -60,6 +62,15 @@ function addRowToTable(table, title, description) {
     checkCell.appendChild(checkbox)
     titleCell.innerText = title;
     descCell.innerText = description;
+
+    downloadCell.style.width = '24px';
+    const downloadButton = document.createElement('button');
+    downloadButton.innerHTML = `<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="16" cy="16" r="16" fill="#00ADB5"/>
+    <path d="M14 4H18V13H14V4Z" fill="#EEEEEE"/>
+    <path d="M15.1197 22.3663C15.4973 23.0672 16.5027 23.0672 16.8803 22.3663L21.2677 14.2244C21.6267 13.5581 21.1442 12.75 20.3874 12.75H11.6126C10.8558 12.75 10.3733 13.5581 10.7323 14.2244L15.1197 22.3663Z" fill="#EEEEEE"/>
+    <rect x="11" y="25" width="10" height="2" fill="#EEEEEE"/>
+    </svg>`
 
     actionCell.style.width = '24px';
 
@@ -73,6 +84,7 @@ function addRowToTable(table, title, description) {
         </svg>`;
     cartButton.onclick = function () { addToCart(title); }; // Pass title to addToCart function
     actionCell.appendChild(cartButton);
+    downloadCell.appendChild(downloadButton);
 }
 
 
