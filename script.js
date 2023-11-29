@@ -162,6 +162,14 @@ document.addEventListener('DOMContentLoaded', () => {
         // Perform additional actions if needed
         shoppingCartModal.show();
     });
+
+    const downloadButton = document.getElementById('downloadButton');
+    downloadButton.addEventListener('click', () => {
+        if (Object.keys(cartItems).length != 0) {
+            mockDownload()
+            return;
+        }
+    });
 });
 
 
@@ -184,4 +192,20 @@ function populateCartModal() {
             cartItemsList.appendChild(listItem);
         }
     }
+}
+
+function mockDownload() {
+    // Creating a temporary anchor element
+    const tempLink = document.createElement('a');
+    tempLink.href = 'path/to/your/mock-zip.zip'; // Replace with the path to your mock ZIP file
+    tempLink.download = 'mock-download.zip'; // Suggested name for download
+
+    // Appending to the body (not visible to user)
+    document.body.appendChild(tempLink);
+
+    // Triggering the download
+    tempLink.click();
+
+    // Removing the temporary link
+    document.body.removeChild(tempLink);
 }
