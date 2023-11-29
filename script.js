@@ -47,12 +47,14 @@ function populateTable() {
 
 function addRowToTable(table, title, description) {
     const row = table.insertRow();
-    const checkCell = row.insertCell(0)
-    const titleCell = row.insertCell(1);
-    const descCell = row.insertCell(2);
-    const actionCell = row.insertCell(3);
-    const downloadCell = row.insertCell(4);
+    const idCell = row.insertCell(0)
+    const checkCell = row.insertCell(1)
+    const titleCell = row.insertCell(2);
+    const descCell = row.insertCell(3);
+    const actionCell = row.insertCell(4);
+    const downloadCell = row.insertCell(5);
 
+    idCell.style.display = 'none';
 
     const checkbox = document.createElement('input');
     checkbox.type = "checkbox";
