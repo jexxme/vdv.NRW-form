@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
-function populateTable() {
+function populateTable(category = null) {
     const table = document.getElementById('documentsTable');
     const mockupData = [
         { "rid": "1", "title": "Haftpflichtversicherung", "description": "Details zur Haftpflichtversicherung", "category": "Auto" },
@@ -53,11 +53,13 @@ function populateTable() {
         { "rid": "39", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Reisen" },
         { "rid": "40", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Freizeit" }
     ]
-    
-    
-        ;
+    // Clear existing rows in the table
+    while (table.rows.length > 1) {
+        table.deleteRow(1);
+    }
 
-    mockupData.forEach(doc => {
+    // Filter and add rows to the table based on the selected category
+    mockupData.filter(doc => category === null || doc.category === category).forEach(doc => {
         addRowToTable(table, doc.rid, doc.title, doc.description);
     });
 }
@@ -277,4 +279,15 @@ function mockDownload() {
 }
 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Select all buttons within the svgButtonContainer
+    const filterButtons = document.querySelectorAll('#svgButtonContainer .svg-button');
 
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Retrieve the category from the data attribute
+            const category = this.getAttribute('data-category');
+            populateTable(category); // Call populateTable with the selected category
+        });
+    });
+});
