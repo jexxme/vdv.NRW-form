@@ -71,6 +71,7 @@ function addRowToTable(table, title, description) {
     <path d="M15.1197 22.3663C15.4973 23.0672 16.5027 23.0672 16.8803 22.3663L21.2677 14.2244C21.6267 13.5581 21.1442 12.75 20.3874 12.75H11.6126C10.8558 12.75 10.3733 13.5581 10.7323 14.2244L15.1197 22.3663Z" fill="#EEEEEE"/>
     <rect x="11" y="25" width="10" height="2" fill="#EEEEEE"/>
     </svg>`
+    downloadButton.onclick = function() {fileDownload();}
 
     actionCell.style.width = '24px';
     checkCell.style.width = '10px';
@@ -123,8 +124,8 @@ function updateCartCounter() {
 
 window.onscroll = function() {makeHeaderSticky()};
 
-var header = document.getElementById("mainHeader");
-var sticky = header.offsetTop;
+let header = document.getElementById("mainHeader");
+let sticky = header.offsetTop;
 
 function makeHeaderSticky() {
   if (window.scrollY > sticky) {
@@ -134,3 +135,16 @@ function makeHeaderSticky() {
   }
 }
 
+function fileDownload() {
+    let element = document.createElement('a');
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei'));
+        filename = 'test.pdf'
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+}
