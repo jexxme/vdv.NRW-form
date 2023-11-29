@@ -70,7 +70,7 @@ nav {
 #svgButtonContainer {
     display: flex;
     justify-content: space-around;
-    margin-top: 5px;
+    margin-top: 10px;
     flex-wrap: wrap; /* Allows items to wrap in smaller screens */
     gap: 10px; /* Adds space between the buttons */
     margin-left: 10px;
@@ -101,17 +101,63 @@ nav {
 .svg-button svg {
     width: 50%; /* Adjust as needed */
     height: 50%; /* Adjust as needed */
-    fill: #212529;
+    fill: #333333;
 }
 
 .svg-button span {
     margin-top: 10px; /* Adds space between icon and text */
     font-size: 0.9em; /* Adjust text size as needed */
-    color: #212529; /* Text color */
+    color: #333333; /* Text color */
+}
+
+
+
+/* Tablet (devices up to 768px wide) */
+@media (max-width: 768px) {
+    .svg-button {
+        width: 80px; /* Smaller size for tablets */
+        height: 80px;
+    }
+
+    .svg-button span {
+        display: none; /* Hide text on tablets */
+    }
+
+    .description-column {
+        display: none; /* Hide description column on tablets */
+    }
+
+    .desc-cell {
+        display: none; /* Hide description column on tablets */
+    }
+
+
+}
+
+/* Phone (devices up to 480px wide) */
+@media (max-width: 480px) {
+    .svg-button {
+        width: 60px; /* Even smaller size for phones */
+        height: 60px;
+    }
+
+    .title-cell {
+        width: 10px; /* Adjust this value as needed */
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .dwn-btn {
+        display: none; /* Hide the down button on phones */
+    }
+
 }
 
 
 /* TABLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+
+
 .svg-icon {
     display: inline-block;
     vertical-align: middle;
@@ -124,7 +170,7 @@ nav {
 
 
 main {
-    padding: 5px;
+    padding: 10px;
     padding-left: 10px;
     padding-right: 10px;
 }
@@ -132,7 +178,8 @@ main {
 table {
     width: 100%;
     border-collapse: collapse;
-    
+    /* table-layout: fixed; */
+
 
 }
 
