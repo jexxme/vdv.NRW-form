@@ -89,6 +89,25 @@ button.add-to-cart-btn svg {
     /* Adjust as needed */
 }
 
+
+/* Style for the 'Add to Cart' button */
+button.dwn-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+/* Style for the SVG inside the button */
+button.dwn-btn svg {
+    fill: currentColor;
+    /* Or any color you want for the SVG */
+    width: 24px;
+    /* Adjust as needed */
+    height: 24px;
+    /* Adjust as needed */
+}
+
 /* 
 .action-cell {
     width: 24px;
@@ -121,8 +140,9 @@ footer {
     margin: 0;
     padding: 0;
 }
+
 .sticky {
     position: fixed;
     top: 0;
     width: 100%
-  }
+}
