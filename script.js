@@ -152,3 +152,36 @@ function fileDownload(button, table) {
 
     document.body.removeChild(element);
 }
+
+
+document.addEventListener('DOMContentLoaded', () => {
+    const cartButton = document.getElementById('cartButton');
+    const shoppingCartModal = new bootstrap.Modal(document.getElementById('shoppingCartModal'));
+    cartButton.addEventListener('click', populateCartModal);
+    cartButton.addEventListener('click', () => {
+        // Perform additional actions if needed
+        shoppingCartModal.show();
+    });
+});
+
+
+function populateCartModal() {
+    const cartItemsList = document.getElementById('cartItemsList');
+    cartItemsList.innerHTML = ''; // Clear existing items
+
+    for (let item in cartItems) {
+        const quantity = cartItems[item];
+        if (quantity > 0) {
+            const listItem = document.createElement('div');
+            listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
+            listItem.innerText = item;
+
+            const badge = document.createElement('span');
+            badge.classList.add('badge', 'bg-primary', 'rounded-pill');
+            badge.innerText = quantity;
+
+            listItem.appendChild(badge);
+            cartItemsList.appendChild(listItem);
+        }
+    }
+}
