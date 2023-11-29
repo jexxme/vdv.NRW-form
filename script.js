@@ -176,22 +176,63 @@ function populateCartModal() {
     const cartItemsList = document.getElementById('cartItemsList');
     cartItemsList.innerHTML = ''; // Clear existing items
 
+    let isEmpty = true; // Flag to check if cart is empty
+
     for (let item in cartItems) {
         const quantity = cartItems[item];
         if (quantity > 0) {
-            const listItem = document.createElement('div');
+            isEmpty = false; // Cart is not empty
             listItem.classList.add('list-group-item', 'd-flex', 'justify-content-between', 'align-items-center');
-            listItem.innerText = item;
 
+            // Create delete button with Bootstrap "X" icon
+            const deleteBtn = document.createElement('button');
+            deleteBtn.classList.add('btn', 'btn-sm', 'me-2'); // 'btn-close' for clear button style
+            deleteBtn.style.background = 'none'; // Remove default button background
+            deleteBtn.style.border = 'none'; // Remove default button border
+            deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" fill="red" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>';
+            deleteBtn.onclick = function() { removeFromCart(item); };
+
+            // Add delete button to list item
+            listItem.appendChild(deleteBtn);
+
+            // Item title
+            const itemTitle = document.createElement('span');
+            itemTitle.innerText = item;
+            // Text align the title left
+            itemTitle.style.textAlign = 'left';
+
+
+            listItem.appendChild(itemTitle);
+
+            // Quantity badge
             const badge = document.createElement('span');
             badge.classList.add('badge', 'bg-primary', 'rounded-pill');
             badge.innerText = quantity;
-
             listItem.appendChild(badge);
+
             cartItemsList.appendChild(listItem);
         }
     }
+
+    if (isEmpty) {
+        // Display an alert if the cart is empty
+        const emptyAlert = document.createElement('div');
+        emptyAlert.classList.add('alert', 'alert-warning');
+        emptyAlert.role = 'alert';
+        emptyAlert.innerText = 'Sie haben keine Dokumente im Warenkorb.';
+        cartItemsList.appendChild(emptyAlert);
+    }
 }
+
+function removeFromCart(itemTitle) {
+    if (cartItems[itemTitle]) {
+        delete cartItems[itemTitle]; // Remove item from cart
+        updateCartCounter();
+        localStorage.setItem('cartItems', JSON.stringify(cartItems));
+        populateCartModal(); // Refresh the cart modal to reflect the change
+    }
+}
+
 
 function mockDownload() {
     // Creating a temporary anchor element
