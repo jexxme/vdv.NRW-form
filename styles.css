@@ -10,8 +10,6 @@ body {
 
 }
 
-
-
 /* NAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
 header {
     background-color: #333;
@@ -68,53 +66,49 @@ nav {
 }
 
 
+
+/* CONTAINEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER  */
+#svgButtonContainer {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.svg-button {
+    width: 80px; /* Adjust as needed */
+    height: 80px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.svg-button svg {
+    width: 60%; /* Adjust as needed */
+    height: 60%; /* Adjust as needed */
+    fill: currentColor;
+}
+
+
 /* TABLEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE */
+.svg-icon {
+    display: inline-block;
+    vertical-align: middle;
+    /* width: 1em;
+    height: 1em; */
+    fill: #ffffff;
+    
 
-
-/* Style for the 'Add to Cart' button */
-button.add-to-cart-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
 }
 
-/* Style for the SVG inside the button */
-button.add-to-cart-btn svg {
-    fill: currentColor;
-    /* Or any color you want for the SVG */
-    width: 24px;
-    /* Adjust as needed */
-    height: 24px;
-    /* Adjust as needed */
-}
-
-
-/* Style for the 'Add to Cart' button */
-button.dwn-btn {
-    background: none;
-    border: none;
-    padding: 0;
-    cursor: pointer;
-}
-
-/* Style for the SVG inside the button */
-button.dwn-btn svg {
-    fill: currentColor;
-    /* Or any color you want for the SVG */
-    width: 24px;
-    /* Adjust as needed */
-    height: 24px;
-    /* Adjust as needed */
-}
-
-/* 
-.action-cell {
-    width: 24px;
-*/
 
 main {
-    padding: 20px;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 table {
@@ -126,10 +120,15 @@ table {
 
 th,
 td {
-    border: 1px solid #ddd !important;
+    /* border: 1px solid #ddd !important; */
     padding: 8px;
     text-align: left;
     
+    
+}
+
+table tr {
+    border-bottom: 1px solid #ddd;
 }
 
 /* Style for  header */
@@ -164,4 +163,22 @@ footer {
     position: fixed;
     top: 0;
     width: 100%
+}
+
+
+
+@keyframes pulseAnimation {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1); /* Increase the size */
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.pulse {
+    animation: pulseAnimation 0.2s; /* Adjust time as needed */
 }

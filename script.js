@@ -36,7 +36,22 @@ function populateTable() {
         { "rid": "22", "title": "Pferdehaftpflichtversicherung", "description": "Erläuterungen zur Pferdehaftpflichtversicherung", "category": "Versicherung" },
         { "rid": "23", "title": "Elementarschadenversicherung", "description": "Übersicht über Elementarschadenversicherungsbedingungen", "category": "Versicherung" },
         { "rid": "24", "title": "Betriebshaftpflichtversicherung", "description": "Informationen zur Betriebshaftpflichtversicherung", "category": "Versicherung" },
-        { "rid": "25", "title": "Photovoltaikversicherung", "description": "Dokument über Photovoltaikversicherungsleistungen", "category": "Versicherung" }
+        { "rid": "25", "title": "Photovoltaikversicherung", "description": "Dokument über Photovoltaikversicherungsleistungen", "category": "Versicherung" },
+        { "rid": "26", "title": "Fahrzeugversicherung", "description": "Informationen zur Fahrzeugversicherung", "category": "Auto" },
+        { "rid": "27", "title": "Haftpflichtversicherung für Unternehmen", "description": "Details zur Haftpflichtversicherung für Unternehmen", "category": "Gewerbe" },
+        { "rid": "28", "title": "Reisekrankenversicherung", "description": "Übersicht über Reisekrankenversicherungsbedingungen", "category": "Versicherung" },
+        { "rid": "29", "title": "Wohngebäudeversicherung", "description": "Informationen zur Wohngebäudeversicherung", "category": "Versicherung" },
+        { "rid": "30", "title": "Tierkrankenversicherung", "description": "Wichtige Fakten zur Tierkrankenversicherung", "category": "Versicherung" },
+        { "rid": "31", "title": "Rentenversicherung für Selbstständige", "description": "Details zur Rentenversicherung für Selbstständige", "category": "Versicherung" },
+        { "rid": "32", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Versicherung" },
+        { "rid": "33", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Versicherung" },
+        { "rid": "34", "title": "Haftpflichtversicherung für Sportvereine", "description": "Wichtige Fakten zur Haftpflichtversicherung für Sportvereine", "category": "Versicherung" },
+        { "rid": "35", "title": "Werkzeugversicherung", "description": "Übersicht über Werkzeugversicherungsbedingungen", "category": "Versicherung" },
+        { "rid": "36", "title": "Reisegepäckversicherung", "description": "Details zur Reisegepäckversicherung", "category": "Versicherung" },
+        { "rid": "37", "title": "Tierkrankenversicherung", "description": "Informationen zur Tierkrankenversicherung", "category": "Versicherung" },
+        { "rid": "38", "title": "Rentenversicherung für Selbstständige", "description": "Wichtige Fakten zur Rentenversicherung für Selbstständige", "category": "Versicherung" },
+        { "rid": "39", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Versicherung" },
+        { "rid": "40", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Versicherung" },
     ]
         ;
 
@@ -70,24 +85,27 @@ function addRowToTable(table, rid, title, description) {
     downloadCell.style.width = '24px';
     const downloadButton = document.createElement('button');
     downloadButton.id = rid
-    downloadButton.classList.add('dwn-btn');
-    downloadButton.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>`
+    // downloadButton.classList.add('dwn-btn');
+    downloadButton.classList.add('btn', 'btn-secondary', 'btn-sm'); // Bootstrap secondary style
+    downloadButton.innerHTML = `<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>`
     downloadButton.onclick = function () { fileDownload(this, table); }
-
     actionCell.style.width = '24px';
     checkCell.style.width = '10px';
 
     // Add to Cart Button with SVG
     const cartButton = document.createElement('button');
-    cartButton.classList.add('add-to-cart-btn');
+    cartButton.classList.add('btn', 'btn-primary', 'btn-sm'); // Bootstrap primary style
     cartButton.innerHTML = `
-        <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+        <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
             <!-- SVG Path -->
             <path d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96zM252 160c0 11 9 20 20 20h44v44c0 11 9 20 20 20s20-9 20-20V180h44c11 0 20-9 20-20s-9-20-20-20H356V96c0-11-9-20-20-20s-20 9-20 20v44H272c-11 0-20 9-20 20z"/>
         </svg>`;
     cartButton.onclick = function () { addToCart(title); }; // Pass title to addToCart function
-    downloadCell.appendChild(downloadButton);
-    actionCell.appendChild(cartButton);
+    cartButton.style.width = '48px';
+
+
+    downloadCell.appendChild(cartButton); // Ja das ist ein Hack, aber es funktioniert
+    actionCell.appendChild(downloadButton); // Ich hasse mich dafür
 
 }
 let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {}; // Initialize from localStorage
@@ -99,6 +117,14 @@ function addToCart(itemTitle) {
         cartItems[itemTitle] = 1; // Add item with quantity 1 if not in cart
     }
     updateCartCounter();
+     // Find the cart button and apply the animation
+     const cartButton = document.getElementById('cartButton');
+     cartButton.classList.add('pulse');
+ 
+     // Remove the class after the animation is complete
+     cartButton.addEventListener('animationend', () => {
+         cartButton.classList.remove('pulse');
+     });
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     console.log(cartItems)
 }
@@ -216,7 +242,7 @@ function populateCartModal() {
         const emptyAlert = document.createElement('div');
         emptyAlert.classList.add('alert', 'alert-warning');
         emptyAlert.role = 'alert';
-        emptyAlert.innerText = 'Your cart is empty.';
+        emptyAlert.innerText = 'Ihr Warenkorb enthält keine Dokumente.';
         cartItemsList.appendChild(emptyAlert);
     }
 }
@@ -247,3 +273,6 @@ function mockDownload() {
     // Removing the temporary link
     document.body.removeChild(tempLink);
 }
+
+
+
