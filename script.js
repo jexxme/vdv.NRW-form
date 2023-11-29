@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('cartButton').addEventListener('click', openShoppingCartModal);
 });
 
-let cartItemCount = 0; // Global variable to keep track of cart item count
-let cartItems = {}; // Object to store item titles and their quantities
 
 function populateTable() {
     const table = document.getElementById('documentsTable');
@@ -92,7 +90,7 @@ function addRowToTable(table, rid, title, description) {
     actionCell.appendChild(cartButton);
 
 }
-
+let cartItems = JSON.parse(localStorage.getItem('cartItems')) || {}; // Initialize from localStorage
 
 function addToCart(itemTitle) {
     if (cartItems[itemTitle]) {
@@ -105,11 +103,8 @@ function addToCart(itemTitle) {
     console.log(cartItems)
 }
 
-
 function updateCartCounter() {
     let totalCount = 0;
-    let storedCartItems = localStorage.getItem('cartItems');
-    let cartItems = storedCartItems ? JSON.parse(storedCartItems) : {};
 
     for (let key in cartItems) {
         totalCount += cartItems[key];
@@ -123,6 +118,10 @@ function updateCartCounter() {
         cartCounter.style.display = 'none';
     }
 }
+
+// Call updateCartCounter on page load to reflect the current state of the cart
+updateCartCounter();
+
 
 window.onscroll = function () { makeHeaderSticky() };
 
