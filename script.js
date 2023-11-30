@@ -169,20 +169,51 @@ function makeHeaderSticky() {
 }
 
 function fileDownload(button, table) {
-    let element = document.createElement('a');
     let buttonId = button.id;
-    let filename = table.rows[buttonId].cells[3].innerText
-    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei'));
-    filetype = '.pdf'
-    element.setAttribute('download', filename + filetype);
+    let filename = table.rows[buttonId].cells[3].innerText;
+    let filetype = '.pdf';
+    let downloadUrl = 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei');
 
-    element.style.display = 'none';
-    document.body.appendChild(element);
+    // Show additional information modal
+    var additionalInfoModal = new bootstrap.Modal(document.getElementById('ageInputModal'), {
+        keyboard: false
+    });
+    additionalInfoModal.show();
 
-    element.click();
+    // Handle form submission
+    document.getElementById('additionalInfoForm').onsubmit = function (event) {
+        event.preventDefault();
+        additionalInfoModal.hide();
 
-    document.body.removeChild(element);
+        // Proceed with the download
+        let element = document.createElement('a');
+        element.setAttribute('href', downloadUrl);
+        element.setAttribute('download', filename + filetype);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    };
 }
+
+// VOrherige func
+// function fileDownload(button, table) {
+//     let element = document.createElement('a');
+//     let buttonId = button.id;
+//     let filename = table.rows[buttonId].cells[3].innerText
+//     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei'));
+//     filetype = '.pdf'
+//     element.setAttribute('download', filename + filetype);
+
+//     element.style.display = 'none';
+//     document.body.appendChild(element);
+
+//     element.click();
+
+//     document.body.removeChild(element);
+// }
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {
