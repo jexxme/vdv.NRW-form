@@ -49,7 +49,7 @@ function populateTable(category = null) {
         { "rid": "35", "title": "Werkzeugversicherung", "description": "Übersicht über Werkzeugversicherungsbedingungen", "category": "Gewerbe" },
         { "rid": "36", "title": "Reisegepäckversicherung", "description": "Details zur Reisegepäckversicherung", "category": "Reisen" },
         { "rid": "37", "title": "Tierkrankenversicherung", "description": "Informationen zur Tierkrankenversicherung", "category": "Haustiere" },
-        { "rid": "38", "title": "Rentenversicherung für Selbstständige", "description": "Wichtige Fakten zur Rentenversicherung für Selbstständige", "category": "Altersvorsorge" },
+        { "rid": "38", "title": "Rentenversicherung für Freiberufler", "description": "Wichtige Fakten zur Rentenversicherung für Freiberufler", "category": "Altersvorsorge" },
         { "rid": "39", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Reisen" },
         { "rid": "40", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Freizeit" }
     ]
@@ -100,7 +100,7 @@ function addRowToTable(table, rid, title, description) {
 
     // Add to Cart Button with SVG
     const cartButton = document.createElement('button');
-    cartButton.classList.add('btn', 'btn-primary', 'btn-sm', 'cart-btn' ); // Bootstrap primary style
+    cartButton.classList.add('btn', 'btn-primary', 'btn-sm', 'cart-btn'); // Bootstrap primary style
     cartButton.innerHTML = `
         <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
             <!-- SVG Path -->
@@ -123,14 +123,14 @@ function addToCart(itemTitle) {
         cartItems[itemTitle] = 1; // Add item with quantity 1 if not in cart
     }
     updateCartCounter();
-     // Find the cart button and apply the animation
-     const cartButton = document.getElementById('cartButton');
-     cartButton.classList.add('pulse');
- 
-     // Remove the class after the animation is complete
-     cartButton.addEventListener('animationend', () => {
-         cartButton.classList.remove('pulse');
-     });
+    // Find the cart button and apply the animation
+    const cartButton = document.getElementById('cartButton');
+    cartButton.classList.add('pulse');
+
+    // Remove the class after the animation is complete
+    cartButton.addEventListener('animationend', () => {
+        cartButton.classList.remove('pulse');
+    });
     localStorage.setItem('cartItems', JSON.stringify(cartItems));
     console.log(cartItems)
 }
@@ -223,7 +223,7 @@ function populateCartModal() {
             deleteBtn.classList.add('btn', 'btn-sm', 'me-2');
             deleteBtn.style.background = 'none'; // Remove default button background
             deleteBtn.style.border = 'none'; // Remove default button border
-            deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" fill="red" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>';            deleteBtn.onclick = function() { removeFromCart(item); };
+            deleteBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" height="16" width="12" fill="red" viewBox="0 0 384 512"><!--!Font Awesome Free 6.5.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2023 Fonticons, Inc.--><path d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>'; deleteBtn.onclick = function () { removeFromCart(item); };
 
             listItem.appendChild(deleteBtn);
 
@@ -281,12 +281,12 @@ function mockDownload() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     // Select all buttons within the svgButtonContainer
     const filterButtons = document.querySelectorAll('#svgButtonContainer .svg-button');
 
     filterButtons.forEach(button => {
-        button.addEventListener('click', function() {
+        button.addEventListener('click', function () {
             // Retrieve the category from the data attribute
             const category = this.getAttribute('data-category');
             populateTable(category); // Call populateTable with the selected category
