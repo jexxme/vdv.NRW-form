@@ -196,26 +196,6 @@ function fileDownload(button, table) {
     };
 }
 
-// VOrherige func
-// function fileDownload(button, table) {
-//     let element = document.createElement('a');
-//     let buttonId = button.id;
-//     let filename = table.rows[buttonId].cells[3].innerText
-//     element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei'));
-//     filetype = '.pdf'
-//     element.setAttribute('download', filename + filetype);
-
-//     element.style.display = 'none';
-//     document.body.appendChild(element);
-
-//     element.click();
-
-//     document.body.removeChild(element);
-// }
-
-
-
-
 document.addEventListener('DOMContentLoaded', () => {
     const cartButton = document.getElementById('cartButton');
     const shoppingCartModal = new bootstrap.Modal(document.getElementById('shoppingCartModal'));
