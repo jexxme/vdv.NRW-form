@@ -193,7 +193,7 @@ function fileDownload(button, table) {
         document.body.appendChild(element);
         element.click();
         document.body.removeChild(element);
-    };
+    }, { once: true };
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -276,20 +276,35 @@ function removeFromCart(itemTitle) {
 
 
 function mockDownload() {
-    // Creating a temporary anchor element
-    const tempLink = document.createElement('a');
-    tempLink.href = 'path/to/your/mock-zip.zip'; // Replace with the path to your mock ZIP file
-    tempLink.download = 'mock-download.zip'; // Suggested name for download
+    // Close the cart modal
+    const cartModalEl = document.getElementById('shoppingCartModal');
+    var cartModal = bootstrap.Modal.getInstance(cartModalEl);
+    cartModal.hide();
 
-    // Appending to the body (not visible to user)
-    document.body.appendChild(tempLink);
+    // Open the age verification modal
+    const ageModalEl = document.getElementById('ageInputModal');
+    var ageModal = new bootstrap.Modal(ageModalEl);
+    ageModal.show();
 
-    // Triggering the download
-    tempLink.click();
+    // Listen for age modal form submission
+    document.getElementById('downloadForm').addEventListener('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+        ageModal.hide(); // Close the age modal
 
-    // Removing the temporary link
-    document.body.removeChild(tempLink);
+        // Trigger the mock download
+
+        // This doesnt work lol
+        const tempLink = document.createElement('a');
+        tempLink.href = 'path/to/your/mock-zip.zip'; // Replace with your mock ZIP file's path
+        tempLink.download = 'mock-download.zip'; // Suggested name for download
+        tempLink.style.display = 'none';
+        document.body.appendChild(tempLink);
+        tempLink.click();
+        document.body.removeChild(tempLink);
+    }, { once: true }); // Use { once: true } to ensure the listener is removed after execution
 }
+
+
 
 
 document.addEventListener('DOMContentLoaded', function () {
