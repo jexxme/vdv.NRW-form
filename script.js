@@ -74,7 +74,7 @@ function addRowToTable(table, rid, title, description) {
     const downloadCell = row.insertCell(5);
 
     idCell.style.display = 'none';
-    row.id = 'r' + rid
+    row.id = rid
 
     const checkbox = document.createElement('input');
     checkbox.type = "checkbox";
@@ -169,8 +169,9 @@ function makeHeaderSticky() {
 }
 
 function fileDownload(button, table) {
-    let buttonId = button.id;
-    let filename = table.rows[buttonId].cells[3].innerText;
+    let td = button.parentElement;
+    let tr = td.parentElement;
+    let filename = table.rows[tr.id].cells[3].innerText;
     let filetype = '.pdf';
     let downloadUrl = 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei');
 
