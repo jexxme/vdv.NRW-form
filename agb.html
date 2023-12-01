@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Informationsdokumente Overview</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+    <header id="mainHeader">
+        <nav>
+            <!-- Navigation Bar Content -->
+        </nav>
+        <div class="cart-container">
+            <span id="cartCounter" class="badge bg-primary">0</span> <!-- Counter Placeholder -->
+
+            <button id="cartButton"> <svg xmlns="http://www.w3.org/2000/svg" height="1em"
+                    viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                    <path fill="#EEEEEE"
+                        d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
+                </svg>
+            </button>
+
+        </div>
+    </header>
+
+
+
+
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal fade" id="shoppingCartModal" tabindex="-1" aria-labelledby="shoppingCartModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="shoppingCartModalLabel">Warenkorb</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <!-- Shopping cart items will be added here -->
+                    <div id="cartItemsList" class="list-group">
+                        <!-- Shopping cart items will be added here -->
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zurück</button> -->
+                    <button type="submit" class="btn btn-secondary" id="downloadButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="white"
+                            viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                            <path
+                                d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                        </svg>
+                    </button>
+                    <button type="button" class="btn btn-primary">Zum Versand</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Age and Source Input Modal -->
+    <div class="modal fade" id="ageInputModal" tabindex="-1" aria-labelledby="ageInputModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="ageInputModalLabel">Zusätzliche Informationen (optional)</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form id="additionalInfoForm">
+                        <!-- Age Input -->
+                        <div class="mb-3">
+                            <label for="userAge" class="form-label">Wie alt sind Sie? (optional):</label>
+                            <input type="number" class="form-control" id="userAge" placeholder="Ihr Alter">
+                        </div>
+
+                        <!-- Source Input -->
+                        <div class="mb-3">
+                            <label for="sourceInput" class="form-label">Wie haben sie von uns gehört?
+                                (optional):</label>
+                            <input type="text" class="form-control" id="sourceInput"
+                                placeholder="Freunde, Kollegen, Facebook, Google, Instagram...">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="submit" class="btn btn-primary">
+                                <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                    viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                    <path
+                                        d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                                </svg>
+                                Download
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <main>
+        <div id="info-container">
+
+            <h1>
+
+                Allgemeine Geschäftsbedingungen des Verein Deutsche Versicherungen e.V.<br />
+            </h1>
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§1 Geltung gegenüber Unternehmern und
+                Begriffsdefinitionen</p>
+            (1) Die nachfolgenden Allgemeinen Geschäftbedingungen gelten für alle Lieferungen zwischen uns und einem
+            Verbraucher
+            in ihrer zum Zeitpunkt der Bestellung gültigen Fassung.<br />
+            <br />
+            Verbraucher ist jede natürliche Person, die ein Rechtsgeschäft zu Zwecken abschließt, die überwiegend
+            weder
+            ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet werden können (§ 13 BGB).
+            <br />
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§2 Zustandekommen eines Vertrages, Speicherung des
+                Vertragstextes</p>
+            (1) Die folgenden Regelungen über den Vertragsabschluss gelten für Bestellungen über unseren
+            Internetshop
+            http://www.vdv-nrw.de .<br />
+            <br />
+            <b>(2) Im Falle des Vertragsschlusses kommt der Vertrag mit<br />
+
+                <div style="font-weight: bold; margin-left: 20px;">
+                    <br />
+                    Verein Deutsche Versicherungen e.V.<br />
+                    Klaus Muster<br />
+                    Beispielstraße 42<br />
+                    D-98765 Musterstadt<br />
+                    Registernummer 12131415<br />
+                    Registergericht Amtsgericht Musterstadt<br />
+                    <br />
+                </div>
+                zustande.<br />
+            </b>
+            <br />
+            (3) Die Präsentation der Waren in unserem Internetshop stellen kein rechtlich bindendes Vertragsangebot
+            unsererseits dar,
+            sondern sind nur eine unverbindliche Aufforderungen an den Verbraucher, Waren zu bestellen. Mit der
+            Bestellung der gewünschten Ware gibt der Verbraucher ein für
+            ihn verbindliches Angebot auf Abschluss eines Kaufvertrages ab.<br />
+            (4) Bei Eingang einer Bestellung in unserem Internetshop gelten folgende Regelungen:
+            Der Verbraucher gibt ein bindendes Vertragsangebot ab, indem er die in unserem Internetshop vorgesehene
+            Bestellprozedur erfolgreich durchläuft.<br />
+            <br />
+            Die Bestellung erfolgt in folgenden Schritten:<br />
+            <br />
+            <div class="ml20">
+
+                1) Auswahl der gewünschten Ware<br />
+
+                2) Bestätigen durch Anklicken der Buttons „Bestellen“ <br />
+
+                3) Prüfung der Angaben im Warenkorb<br />
+
+                4) Betätigung des Buttons „zur Kasse“ <br />
+
+                5) Anmeldung im Internetshop nach Registrierung und Eingabe der Anmelderangaben (E-Mail-Adresse und
+                Passwort). <br />
+
+                6) Nochmalige Prüfung bzw. Berichtigung der jeweiligen eingegebenen Daten.<br />
+
+                7) Verbindliche Absendung der Bestellung durch Anklicken des Buttons „kostenpflichtig bestellen“
+                bzw.
+                „kaufen“<br />
+
+                <br />
+            </div>
+            Der Verbraucher kann vor dem verbindlichen Absenden der Bestellung durch Betätigen der in dem von ihm
+            verwendeten Internet-Browser enthaltenen „Zurück“-Taste nach
+            Kontrolle seiner Angaben wieder zu der Internetseite gelangen, auf der die Angaben des Kunden erfasst
+            werden
+            und Eingabefehler berichtigen bzw. durch Schließen des
+            Internetbrowsers den Bestellvorgang abbrechen.
+            Wir bestätigen den Eingang der Bestellung unmittelbar durch eine automatisch generierte E-Mail
+            („Auftragsbestätigung“). Mit dieser nehmen wir Ihr Angebot an.
+            <br />
+            <br />
+            (5) Speicherung des Vertragstextes bei Bestellungen über unseren Internetshop : Wir senden Ihnen die
+            Bestelldaten und unsere AGB per
+            E-Mail zu. Die AGB können Sie jederzeit auch unter http://www.beispielshop-online.de/agb.html einsehen.
+
+            Ihre Bestelldaten sind aus Sicherheitsgründen nicht mehr über das Internet zugänglich.
+            <br />
+
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§3 Preise, Versandkosten, Zahlung, Fälligkeit</p>
+            (1) Die angegebenen Preise enthalten die gesetzliche Umsatzsteuer und sonstige Preisbestandteile. Hinzu
+            kommen etwaige Versandkosten.<br />
+            <br />
+            (2) Der Verbraucher hat die Möglichkeit der Zahlung per
+            Vorkasse,
+
+
+
+
+            Nachnahme,
+
+
+
+
+            Bankeinzug,
+
+
+
+
+            PayPal,
+
+
+
+
+            Kreditkarte(
+            Visa
+            )
+
+
+
+
+            .<br />
+            <br />
+
+            (3) Hat der Verbraucher die Zahlung per Vorkasse gewählt, so verpflichtet er sich, den Kaufpreis
+            unverzüglich nach Vertragsschluss zu zahlen.<br />
+            Soweit wir per Nachnahme liefern, tritt die Fälligkeit der Kaufpreisforderung mit Erhalt der Ware ein.
+
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§4 Lieferung</p>
+            (1) Sofern wir dies in der Produktbeschreibung nicht deutlich anders angegeben haben, sind alle von uns
+            angebotenen Artikel sofort versandfertig.
+            Die Lieferung erfolgt hier spätesten innerhalb von 5 Werktagen.
+            Dabei beginnt die Frist für die Lieferung im Falle der Zahlung per Vorkasse am Tag nach
+            Zahlungsauftrag an die mit der Überweisung beauftragte Bank und bei allen anderen Zahlungsarten am Tag
+            nach
+            Vertragsschluss zu laufen.
+            Fällt das Fristende auf einen Samstag, Sonntag oder gesetzlichen Feiertag am Lieferort, so endet die
+            Frist
+            am nächsten Werktag.
+            <br /><br />
+
+            (2) Die Gefahr des zufälligen Untergangs und der zufälligen Verschlechterung der
+            verkauften Sache geht auch beim Versendungskauf erst mit der Übergabe der Sache an den Käufer auf diesen
+            über. <br />
+
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§5 Eigentumsvorbehalt</p>
+            Wir behalten uns das Eigentum an der Ware bis zur vollständigen Bezahlung des Kaufpreises vor. <br />
+
+
+
+            <br />
+
+            ****************************************************************************************************
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§6 Widerrufsrecht des Kunden als Verbraucher:
+            </p>
+
+            <b>
+                Widerrufsrecht für Verbraucher</b><br />
+            <br />
+            Verbrauchern steht ein Widerrufsrecht nach folgender Maßgabe zu, wobei Verbraucher jede natürliche
+            Person
+            ist, die ein Rechtsgeschäft zu Zwecken abschließt,
+            die überwiegend weder ihrer gewerblichen noch ihrer selbständigen beruflichen Tätigkeit zugerechnet
+            werden
+            können:
+
+            <br />
+            <br />
+
+            <p style="font-weight: bold; padding-bottom: 1px; text-align: center;">Widerrufsbelehrung</p>
+            <br />
+            <b>Widerrufsrecht</b><br />
+            <br />
+            Sie haben das Recht, binnen vierzehn Tagen ohne Angabe von Gründen diesen Vertrag zu widerrufen.
+            <br />
+            <br />
+            Die Widerrufsfrist beträgt vierzehn Tage, ab dem Tag, an dem Sie oder ein von Ihnen benannter Dritter,
+            der nicht der Beförderer ist, die Waren in Besitz genommen haben bzw. hat.
+
+            <br /><br />
+            Um Ihr Widerrufsrecht auszuüben, müssen Sie uns<br />
+            <div style="margin-left:20px; margin-top: 5px; margin-bottom:5px;">
+                Verein Deutsche Versicherungen<br />
+                Klaus Muster<br />
+                Beispielstraße 42<br />
+                D-98765 Musterstadt<br />
+                E-Mail shop@beispielshop.com<br />
+                Telefax 05123 45678910<br />
+            </div>
+            mittels einer eindeutigen Erklärung (z.B. ein mit der Post versandter Brief, Telefax oder E-Mail) über
+            Ihren
+            Entschluss,
+            diesen Vertrag zu widerrufen, informieren. Sie können dafür das beigefügte Muster-Widerrufsformular
+            verwenden, das jedoch nicht vorgeschrieben ist.
+            <br />
+            <br />
+
+            <b>Widerrufsfolgen</b>
+            <br /><br />
+            Wenn Sie diesen Vertrag widerrufen, haben wir Ihnen alle Zahlungen, die wir von Ihnen erhalten haben,
+            einschließlich der
+            Lieferkosten (mit Ausnahme der zusätzlichen Kosten, die sich daraus ergeben, dass Sie eine andere Art
+            der
+            Lieferung als
+            die von uns angebotene, günstigste Standardlieferung gewählt haben), unverzüglich und spätestens binnen
+            vierzehn Tagen
+            ab dem Tag zurückzuzahlen, an dem die Mitteilung über Ihren Widerruf dieses Vertrags bei uns eingegangen
+            ist.
+            Für diese Rückzahlung verwenden wir dasselbe Zahlungsmittel, das Sie bei der ursprünglichen Transaktion
+            eingesetzt haben,
+            es sei denn, mit Ihnen wurde ausdrücklich etwas anderes vereinbart; in keinem Fall werden Ihnen wegen
+            dieser
+            Rückzahlung Entgelte berechnet.
+            <br />
+            <br />
+
+            Wir können die Rückzahlung verweigern, bis wir die Waren wieder zurückerhalten haben oder bis Sie den
+            Nachweis erbracht haben,
+            dass Sie die Waren zurückgesandt haben, je nachdem, welches der frühere Zeitpunkt ist.
+            <br />
+            <br />
+
+            Sie haben die Waren unverzüglich und in jedem Fall spätestens binnen vierzehn Tagen ab dem Tag, an dem
+            Sie
+            uns über den
+            Widerruf dieses Vertrages unterrichten, an uns zurückzusenden oder zu übergeben. Die Frist ist gewahrt,
+            wenn Sie die Waren vor Ablauf der Frist von vierzehn Tagen absenden.
+            <br />
+            <br />
+
+            Sie tragen die unmittelbaren Kosten der Rücksendung der Waren.<br />
+            <br />
+
+
+            <b>Ende der Widerrufsbelehrung</b>
+            <br />
+            <br />
+            ****************************************************************************************************
+
+            <br />
+
+
+
+
+
+            <p style="font-weight: bold; padding-bottom: 10px;">§7 Widerrufsformular</p>
+
+            <p style="text-align: center; font-weight: bold;">Muster-Widerrufsformular</p>
+            (Wenn Sie den Vertrag widerrufen wollen, dann füllen Sie bitte dieses Formular aus und senden Sie es
+            zurück.)<br />
+            <div style="border: 1px solid #000000;padding: 10px;">
+                An :<br />
+                Verein Deutsche Versicherungen<br />
+                Klaus Muster<br />
+                Beispielstraße 42<br />
+                D-98765 Musterstadt<br />
+                E-Mail shop@beispielshop.com<br />
+                <br />
+
+                Hiermit widerrufe(n) ich/wir (*) den von mir/uns (*) abgeschlossenen Vertrag über den Kauf der
+                folgenden
+                Waren (*)/die Erbringung der folgenden Dienstleistung (*)<br />
+                <br />
+                _____________________________________________________<br />
+                <br />
+                Bestellt am (*)/erhalten am (*)<br />
+                <br />
+                __________________<br />
+                <br />
+                Name des/der Verbraucher(s)<br />
+                <br />
+                _____________________________________________________<br />
+                <br />
+                Anschrift des/der Verbraucher(s)<br />
+                <br />
+                <br />
+                _____________________________________________________<br />
+                <br />
+                Unterschrift des/der Verbraucher(s) (nur bei Mitteilung auf Papier)<br />
+                <br />
+                __________________<br />
+                <br />
+                Datum<br />
+                <br />
+                __________________<br />
+                <br />
+            </div>
+            (*) Unzutreffendes streichen.<br />
+
+
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§8 Gewährleistung
+            </p>
+
+            Es gelten die gesetzlichen Gewährleistungsregelungen.
+            <br />
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§9 Verhaltenskodex</p>
+            Wir haben uns den Verhaltenskodizes der folgenden Einrichtungen unterworfen:
+            <br />
+            <p style="margin-left: 20px;margin-top: 20px;">
+                Euro-Label Germany<br />
+                EHI-EuroHandelsinstitut GmbH<br />
+                Spichernstraße 55<br />
+                50672 Köln<br />
+            </p>
+            Den Euro-Label Verhaltenskodex können Sie durch Anklicken des auf unserer Webseite angebrachten
+            Euro-Label-Siegels oder unter http://www.euro-label.com abrufen.<br />
+            <br />und <br /><br />
+            <p style="margin-left: 20px;">
+                Trusted Shops GmbH<br />
+                Colonius Carré<br />
+                Subbelrather Straße 15c<br />
+                50823 Köln<br />
+            </p>
+            Den Trusted Shops Verhaltenskodex können Sie durch Anklicken des auf unserer Webseite angebrachten
+            Trusted-Shops-Siegels oder unter www.trustedshops.de abrufen.<br />
+
+            <br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§10 Vertragssprache</p>
+            Als Vertragssprache steht ausschließlich Deutsch zur Verfügung.<br />
+
+            <br />
+            ****************************************************************************************************<br />
+            <p style="font-weight: bold; padding-bottom: 10px;">§11 Kundendienst</p>
+            <b>
+                Unser Kundendienst für Fragen, Reklamationen und Beanstandungen steht Ihnen werktags von
+                9:00 Uhr bis
+                17:30 Uhr unter<br />
+                <br />
+                <p style="margin-left: 20px">
+                    Telefon: 05123 45678911<br />
+                    Telefax: 05123 45678912<br />
+                    E-Mail: service@beispielshop.de<br />
+                </p>
+
+
+                zur Verfügung.
+            </b>
+            <br />
+            <br />
+            ****************************************************************************************************
+
+            <br />
+            <br />
+            <p>Stand der AGB Dez.2023</p>
+        </div>
+    </main>
+
+
+    <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+        <p class="col-md-4 mb-0 text-muted">© 2022 Verein Deutsche Versicherungen e.V.</p>
+
+        <a href="/"
+            class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
+            <svg class="bi me-2" width="40" height="32">
+                <use xlink:href="#bootstrap"></use>
+            </svg>
+        </a>
+
+        <ul class="nav col-md-4 justify-content-end">
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Startseite</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Impressum</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">AGB</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">Datenschutz</a></li>
+            <li class="nav-item"><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -242,6 +242,10 @@ table td:hover {
     width: 100%
 }
 
+#info-container {
+    padding: 20px;
+}
+
 
 
 @keyframes pulseAnimation {
