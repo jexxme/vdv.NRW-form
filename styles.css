@@ -11,22 +11,6 @@ body {
 }
 
 /* NAVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVVV */
-header {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    height: 45px;
-    margin: 0;
-    padding: 0;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-}
 
 .cart-container {
     position: fixed;
