@@ -161,9 +161,9 @@ body {
     }
     #cartCounter {
         margin-right: 10px;
-        height: 36px;
-        width: 36px;
+
         font-size: 14pt;
+        text-align: center;
     }
     .check-box{
         height: 20px;
