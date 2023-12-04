@@ -171,6 +171,7 @@ function makeHeaderSticky() {
 function fileDownload(button, table) {
     let td = button.parentElement;
     let tr = td.parentElement;
+    console.log(tr.id)
     let filename = table.rows[tr.id].cells[3].innerText;
     let filetype = '.pdf';
     let downloadUrl = 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei');

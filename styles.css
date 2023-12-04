@@ -126,14 +126,49 @@ body {
     .description-column {
         display: none;
         /* Hide description column on tablets */
-    }
+    } 
 
     .desc-cell {
         display: none;
         /* Hide description column on tablets */
     }
+    .title-cell{
+        font-size: 16pt;
+    }
+    td{
+        font-size: 16pt;
+    }
+    tr {
+       line-height: 60px;
+       font-size: 16pt;
+    }
+    .dwn-btn {
+        height: 50px;
+        width: 50px;
+        /* Hide the down button on phones */
+    }
 
-
+    .cart-btn {
+        height: 50px;
+        width: 50px;
+    }
+    #cartButton svg {
+        width: 36px;
+        /* Adjust as needed */
+        height: 36px;
+        /* Adjust as needed */
+    }
+    #cartCounter {
+        margin-right: 10px;
+        height: 36px;
+        width: 36px;
+        font-size: 14pt;
+    }
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 30em;
+    }
 }
 
 /* Phone (devices up to 480px wide) */
@@ -157,6 +192,11 @@ body {
         /* Hide the down button on phones */
     }
 
+    table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 30px;
+    }
 }
 
 
