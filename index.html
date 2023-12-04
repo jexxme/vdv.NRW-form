@@ -24,6 +24,8 @@
                 </ul>
 
 
+                <!-- Filter button with bootstrap-->
+
                 <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3">
                     <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
                 </form>
@@ -34,11 +36,11 @@
                         <path fill="#333333"
                             d="M0 24C0 10.7 10.7 0 24 0H69.5c22 0 41.5 12.8 50.6 32h411c26.3 0 45.5 25 38.6 50.4l-41 152.3c-8.5 31.4-37 53.3-69.5 53.3H170.7l5.4 28.5c2.2 11.3 12.1 19.5 23.6 19.5H488c13.3 0 24 10.7 24 24s-10.7 24-24 24H199.7c-34.6 0-64.3-24.6-70.7-58.5L77.4 54.5c-.7-3.8-4-6.5-7.9-6.5H24C10.7 48 0 37.3 0 24zM128 464a48 48 0 1 1 96 0 48 48 0 1 1 -96 0zm336-48a48 48 0 1 1 0 96 48 48 0 1 1 0-96z" />
                     </svg>
+                </button>
+
             </div>
         </div>
     </header>
-
-
 
 
 
@@ -62,22 +64,24 @@
                     <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zurück</button> -->
                     <button type="submit" class="btn btn-secondary" id="downloadButton">
                         <svg width="53" height="24" viewBox="0 0 53 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M0.695648 0H14.9412L19.6358 4.17391H52.1739V32.3478H0.695648V0Z" fill="#F3F3F3"/>
-                            <rect x="36.8696" y="4.17383" width="3.47826" height="3.47826" fill="#393E46"/>
-                            <rect x="33.3913" y="24.3479" width="6.95652" height="12.1739" fill="#393E46"/>
-                            <rect x="33.3913" y="21.5652" width="3.47826" height="3.47826" fill="#393E46"/>
-                            <rect x="36.8696" y="18.0869" width="3.47826" height="3.47826" fill="#393E46"/>
-                            <rect x="33.3913" y="14.6086" width="3.47826" height="3.47826" fill="#393E46"/>
-                            <rect x="36.8696" y="11.1304" width="3.47826" height="3.47826" fill="#393E46"/>
-                            <rect x="35.1304" y="32.3479" width="3.47826" height="3.47826" fill="#F3F3F3"/>
-                            <rect x="33.3913" y="7.6521" width="3.47826" height="3.47826" fill="#393E46"/>
-                            <rect x="40.3478" y="24.3479" width="1.04348" height="12.1739" fill="#F3F3F3"/>
-                            <rect x="32.3478" y="36.5217" width="9.04348" height="1.04348" fill="#F3F3F3"/>
-                            <rect x="32.3478" y="23.6521" width="9.04348" height="1.04348" fill="#F3F3F3"/>
-                            <rect x="32.3478" y="24.3479" width="1.04348" height="12.1739" fill="#F3F3F3"/>
-                            <rect x="7.65218" y="33.739" width="16.3478" height="3.82609" fill="#F3F3F3"/>
-                            <path d="M15.1927 47.4816C15.5611 47.7832 16.091 47.7832 16.4594 47.4816L27.3645 38.5565C28.0917 37.9613 27.6709 36.7826 26.7312 36.7826H4.92102C3.98131 36.7826 3.56045 37.9613 4.28765 38.5565L15.1927 47.4816Z" fill="#F3F3F3"/>
-                            </svg>
+                            <path d="M0.695648 0H14.9412L19.6358 4.17391H52.1739V32.3478H0.695648V0Z" fill="#F3F3F3" />
+                            <rect x="36.8696" y="4.17383" width="3.47826" height="3.47826" fill="#393E46" />
+                            <rect x="33.3913" y="24.3479" width="6.95652" height="12.1739" fill="#393E46" />
+                            <rect x="33.3913" y="21.5652" width="3.47826" height="3.47826" fill="#393E46" />
+                            <rect x="36.8696" y="18.0869" width="3.47826" height="3.47826" fill="#393E46" />
+                            <rect x="33.3913" y="14.6086" width="3.47826" height="3.47826" fill="#393E46" />
+                            <rect x="36.8696" y="11.1304" width="3.47826" height="3.47826" fill="#393E46" />
+                            <rect x="35.1304" y="32.3479" width="3.47826" height="3.47826" fill="#F3F3F3" />
+                            <rect x="33.3913" y="7.6521" width="3.47826" height="3.47826" fill="#393E46" />
+                            <rect x="40.3478" y="24.3479" width="1.04348" height="12.1739" fill="#F3F3F3" />
+                            <rect x="32.3478" y="36.5217" width="9.04348" height="1.04348" fill="#F3F3F3" />
+                            <rect x="32.3478" y="23.6521" width="9.04348" height="1.04348" fill="#F3F3F3" />
+                            <rect x="32.3478" y="24.3479" width="1.04348" height="12.1739" fill="#F3F3F3" />
+                            <rect x="7.65218" y="33.739" width="16.3478" height="3.82609" fill="#F3F3F3" />
+                            <path
+                                d="M15.1927 47.4816C15.5611 47.7832 16.091 47.7832 16.4594 47.4816L27.3645 38.5565C28.0917 37.9613 27.6709 36.7826 26.7312 36.7826H4.92102C3.98131 36.7826 3.56045 37.9613 4.28765 38.5565L15.1927 47.4816Z"
+                                fill="#F3F3F3" />
+                        </svg>
                     </button>
                     <button type="button" class="btn btn-primary">Zum Versand</button>
                 </div>
@@ -211,7 +215,7 @@
         </table>
     </main>
 
-    <footer class="container p-3 mb-3 border-top">
+    <footer class="container p-3 mb-3 ">
         <div class="container">
 
 
@@ -221,7 +225,7 @@
                     <li><a href="#" class="nav-link px-2 text-muted">Impressum</a></li>
                     <li><a href="/agb.html" class="nav-link px-2 text-muted">AGB</a></li>
                     <li><a href="/datenschutz.html" class="nav-link px-2 text-muted">Datenschutz</a></li>
-                    <li><a href="#" class="nav-link px-2 text-muted">FAQ</a></li>
+                    <li><a href="/index.html" class="nav-link px-2 text-muted">FAQ</a></li>
                 </ul>
 
                 <ul class="nav col-12 col-lg-auto justify-content-end">

@@ -4,8 +4,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Populate the table with Informationsdokumente
     populateTable();
-
-   
 });
 
 
@@ -159,7 +157,7 @@ updateCartCounter();
 window.onscroll = function () { makeHeaderSticky() };
 
 let header = document.getElementById("mainHeader");
-let sticky = header.offsetTop;
+// let sticky = header.offsetTop;
 
 function makeHeaderSticky() {
     if (window.scrollY > sticky) {
