@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Populate the table with Informationsdokumente
     populateTable();
 
-    document.getElementById('cartButton').addEventListener('click', openShoppingCartModal);
+   
 });
 
 
