@@ -135,12 +135,9 @@ body {
     .title-cell{
         font-size: 16pt;
     }
-    td{
-        font-size: 16pt;
-    }
     tr {
        line-height: 60px;
-       font-size: 16pt;
+       
     }
     .dwn-btn {
         height: 50px;
@@ -167,7 +164,6 @@ body {
     table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 30em;
     }
 }
 
