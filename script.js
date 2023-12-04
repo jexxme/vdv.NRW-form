@@ -12,46 +12,46 @@ document.addEventListener('DOMContentLoaded', () => {
 function populateTable(category = null) {
     const table = document.getElementById('documentsTable');
     const mockupData = [
-        { "rid": "1", "title": "Haftpflichtversicherung", "description": "Details zur Haftpflichtversicherung", "category": "Auto" },
-        { "rid": "2", "title": "Kfz-Versicherung", "description": "Übersicht über Kfz-Versicherungsbedingungen", "category": "Auto" },
-        { "rid": "3", "title": "Lebensversicherung", "description": "Informationen zur Lebensversicherung", "category": "Lebensversicherung" },
-        { "rid": "4", "title": "Unfallversicherung", "description": "Wichtige Informationen zur Unfallversicherung", "category": "Gesundheit" },
-        { "rid": "5", "title": "Krankenversicherung", "description": "Dokument über Krankenversicherungsleistungen", "category": "Gesundheit" },
-        { "rid": "6", "title": "Rechtsschutzversicherung", "description": "Details zur Rechtsschutzversicherung", "category": "Recht" },
-        { "rid": "7", "title": "Gebäudeversicherung", "description": "Übersicht über Gebäudeversicherungspolicen", "category": "Immobilien" },
-        { "rid": "8", "title": "Hausratversicherung", "description": "Informationen zur Hausratversicherung", "category": "Hausrat" },
-        { "rid": "9", "title": "Berufsunfähigkeitsversicherung", "description": "Wichtige Fakten zur Berufsunfähigkeitsversicherung", "category": "Gesundheit" },
-        { "rid": "10", "title": "Reiseversicherung", "description": "Leitfaden für Reiseversicherungsoptionen", "category": "Reisen" },
-        { "rid": "11", "title": "Tierhalterhaftpflichtversicherung", "description": "Daten zur Tierhalterhaftpflichtversicherung", "category": "Haustiere" },
-        { "rid": "12", "title": "Risikolebensversicherung", "description": "Erläuterungen zur Risikolebensversicherung", "category": "Gesundheit" },
-        { "rid": "13", "title": "Pflegeversicherung", "description": "Übersicht über Pflegeversicherungsbedingungen", "category": "Gesundheit" },
-        { "rid": "14", "title": "Rentenversicherung", "description": "Informationen zur Rentenversicherung", "category": "Altersvorsorge" },
-        { "rid": "15", "title": "Gewerbeversicherung", "description": "Dokument über Gewerbeversicherungsleistungen", "category": "Gewerbe" },
-        { "rid": "16", "title": "Bauherrenhaftpflichtversicherung", "description": "Details zur Bauherrenhaftpflichtversicherung", "category": "Bauwesen" },
-        { "rid": "17", "title": "Fahrradversicherung", "description": "Übersicht über Fahrradversicherungsbedingungen", "category": "Freizeit" },
-        { "rid": "18", "title": "Grundbesitzerhaftpflichtversicherung", "description": "Informationen zur Grundbesitzerhaftpflichtversicherung", "category": "Immobilien" },
-        { "rid": "19", "title": "Erwerbsunfähigkeitsversicherung", "description": "Wichtige Fakten zur Erwerbsunfähigkeitsversicherung", "category": "Gesundheit" },
-        { "rid": "20", "title": "Reiserücktrittsversicherung", "description": "Leitfaden für Reiserücktrittsversicherungsoptionen", "category": "Reisen" },
-        { "rid": "21", "title": "Hundehaftpflichtversicherung", "description": "Daten zur Hundehaftpflichtversicherung", "category": "Haustiere" },
-        { "rid": "22", "title": "Pferdehaftpflichtversicherung", "description": "Erläuterungen zur Pferdehaftpflichtversicherung", "category": "Haustiere" },
-        { "rid": "23", "title": "Elementarschadenversicherung", "description": "Übersicht über Elementarschadenversicherungsbedingungen", "category": "Versicherung" },
-        { "rid": "24", "title": "Betriebshaftpflichtversicherung", "description": "Informationen zur Betriebshaftpflichtversicherung", "category": "Gewerbe" },
-        { "rid": "25", "title": "Photovoltaikversicherung", "description": "Dokument über Photovoltaikversicherungsleistungen", "category": "Immobilien" },
-        { "rid": "26", "title": "Fahrzeugversicherung", "description": "Informationen zur Fahrzeugversicherung", "category": "Auto" },
-        { "rid": "27", "title": "Haftpflichtversicherung für Unternehmen", "description": "Details zur Haftpflichtversicherung für Unternehmen", "category": "Gewerbe" },
-        { "rid": "28", "title": "Reisekrankenversicherung", "description": "Übersicht über Reisekrankenversicherungsbedingungen", "category": "Reisen" },
-        { "rid": "29", "title": "Wohngebäudeversicherung", "description": "Informationen zur Wohngebäudeversicherung", "category": "Immobilien" },
-        { "rid": "30", "title": "Tierkrankenversicherung", "description": "Wichtige Fakten zur Tierkrankenversicherung", "category": "Haustiere" },
-        { "rid": "31", "title": "Rentenversicherung für Selbstständige", "description": "Details zur Rentenversicherung für Selbstständige", "category": "Altersvorsorge" },
-        { "rid": "32", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Reisen" },
-        { "rid": "33", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Freizeit" },
-        { "rid": "34", "title": "Haftpflichtversicherung für Sportvereine", "description": "Wichtige Fakten zur Haftpflichtversicherung für Sportvereine", "category": "Gewerbe" },
-        { "rid": "35", "title": "Werkzeugversicherung", "description": "Übersicht über Werkzeugversicherungsbedingungen", "category": "Gewerbe" },
-        { "rid": "36", "title": "Reisegepäckversicherung", "description": "Details zur Reisegepäckversicherung", "category": "Reisen" },
-        { "rid": "37", "title": "Tierkrankenversicherung", "description": "Informationen zur Tierkrankenversicherung", "category": "Haustiere" },
-        { "rid": "38", "title": "Rentenversicherung für Freiberufler", "description": "Wichtige Fakten zur Rentenversicherung für Freiberufler", "category": "Altersvorsorge" },
-        { "rid": "39", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Reisen" },
-        { "rid": "40", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Freizeit" }
+        { "rid": "0", "title": "Haftpflichtversicherung", "description": "Details zur Haftpflichtversicherung", "category": "Auto" },
+        { "rid": "1", "title": "Kfz-Versicherung", "description": "Übersicht über Kfz-Versicherungsbedingungen", "category": "Auto" },
+        { "rid": "2", "title": "Lebensversicherung", "description": "Informationen zur Lebensversicherung", "category": "Lebensversicherung" },
+        { "rid": "3", "title": "Unfallversicherung", "description": "Wichtige Informationen zur Unfallversicherung", "category": "Gesundheit" },
+        { "rid": "4", "title": "Krankenversicherung", "description": "Dokument über Krankenversicherungsleistungen", "category": "Gesundheit" },
+        { "rid": "5", "title": "Rechtsschutzversicherung", "description": "Details zur Rechtsschutzversicherung", "category": "Recht" },
+        { "rid": "6", "title": "Gebäudeversicherung", "description": "Übersicht über Gebäudeversicherungspolicen", "category": "Immobilien" },
+        { "rid": "7", "title": "Hausratversicherung", "description": "Informationen zur Hausratversicherung", "category": "Hausrat" },
+        { "rid": "8", "title": "Berufsunfähigkeitsversicherung", "description": "Wichtige Fakten zur Berufsunfähigkeitsversicherung", "category": "Gesundheit" },
+        { "rid": "9", "title": "Reiseversicherung", "description": "Leitfaden für Reiseversicherungsoptionen", "category": "Reisen" },
+        { "rid": "10", "title": "Tierhalterhaftpflichtversicherung", "description": "Daten zur Tierhalterhaftpflichtversicherung", "category": "Haustiere" },
+        { "rid": "11", "title": "Risikolebensversicherung", "description": "Erläuterungen zur Risikolebensversicherung", "category": "Gesundheit" },
+        { "rid": "12", "title": "Pflegeversicherung", "description": "Übersicht über Pflegeversicherungsbedingungen", "category": "Gesundheit" },
+        { "rid": "13", "title": "Rentenversicherung", "description": "Informationen zur Rentenversicherung", "category": "Altersvorsorge" },
+        { "rid": "14", "title": "Gewerbeversicherung", "description": "Dokument über Gewerbeversicherungsleistungen", "category": "Gewerbe" },
+        { "rid": "15", "title": "Bauherrenhaftpflichtversicherung", "description": "Details zur Bauherrenhaftpflichtversicherung", "category": "Bauwesen" },
+        { "rid": "16", "title": "Fahrradversicherung", "description": "Übersicht über Fahrradversicherungsbedingungen", "category": "Freizeit" },
+        { "rid": "17", "title": "Grundbesitzerhaftpflichtversicherung", "description": "Informationen zur Grundbesitzerhaftpflichtversicherung", "category": "Immobilien" },
+        { "rid": "18", "title": "Erwerbsunfähigkeitsversicherung", "description": "Wichtige Fakten zur Erwerbsunfähigkeitsversicherung", "category": "Gesundheit" },
+        { "rid": "19", "title": "Reiserücktrittsversicherung", "description": "Leitfaden für Reiserücktrittsversicherungsoptionen", "category": "Reisen" },
+        { "rid": "20", "title": "Hundehaftpflichtversicherung", "description": "Daten zur Hundehaftpflichtversicherung", "category": "Haustiere" },
+        { "rid": "21", "title": "Pferdehaftpflichtversicherung", "description": "Erläuterungen zur Pferdehaftpflichtversicherung", "category": "Haustiere" },
+        { "rid": "22", "title": "Elementarschadenversicherung", "description": "Übersicht über Elementarschadenversicherungsbedingungen", "category": "Versicherung" },
+        { "rid": "23", "title": "Betriebshaftpflichtversicherung", "description": "Informationen zur Betriebshaftpflichtversicherung", "category": "Gewerbe" },
+        { "rid": "24", "title": "Photovoltaikversicherung", "description": "Dokument über Photovoltaikversicherungsleistungen", "category": "Immobilien" },
+        { "rid": "25", "title": "Fahrzeugversicherung", "description": "Informationen zur Fahrzeugversicherung", "category": "Auto" },
+        { "rid": "26", "title": "Haftpflichtversicherung für Unternehmen", "description": "Details zur Haftpflichtversicherung für Unternehmen", "category": "Gewerbe" },
+        { "rid": "27", "title": "Reisekrankenversicherung", "description": "Übersicht über Reisekrankenversicherungsbedingungen", "category": "Reisen" },
+        { "rid": "28", "title": "Wohngebäudeversicherung", "description": "Informationen zur Wohngebäudeversicherung", "category": "Immobilien" },
+        { "rid": "29", "title": "Tierkrankenversicherung", "description": "Wichtige Fakten zur Tierkrankenversicherung", "category": "Haustiere" },
+        { "rid": "30", "title": "Rentenversicherung für Selbstständige", "description": "Details zur Rentenversicherung für Selbstständige", "category": "Altersvorsorge" },
+        { "rid": "31", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Reisen" },
+        { "rid": "32", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Freizeit" },
+        { "rid": "33", "title": "Haftpflichtversicherung für Sportvereine", "description": "Wichtige Fakten zur Haftpflichtversicherung für Sportvereine", "category": "Gewerbe" },
+        { "rid": "34", "title": "Werkzeugversicherung", "description": "Übersicht über Werkzeugversicherungsbedingungen", "category": "Gewerbe" },
+        { "rid": "35", "title": "Reisegepäckversicherung", "description": "Details zur Reisegepäckversicherung", "category": "Reisen" },
+        { "rid": "36", "title": "Tierkrankenversicherung", "description": "Informationen zur Tierkrankenversicherung", "category": "Haustiere" },
+        { "rid": "37", "title": "Rentenversicherung für Freiberufler", "description": "Wichtige Fakten zur Rentenversicherung für Freiberufler", "category": "Altersvorsorge" },
+        { "rid": "38", "title": "Reisegepäckversicherung", "description": "Übersicht über Reisegepäckversicherungsbedingungen", "category": "Reisen" },
+        { "rid": "39", "title": "Hausbootversicherung", "description": "Informationen zur Hausbootversicherung", "category": "Freizeit" }
     ]
     // Clear existing rows in the table
     while (table.rows.length > 1) {
@@ -60,11 +60,11 @@ function populateTable(category = null) {
 
     // Filter and add rows to the table based on the selected category
     mockupData.filter(doc => category === null || doc.category === category).forEach(doc => {
-        addRowToTable(table, doc.rid, doc.title, doc.description);
+        addRowToTable(table, doc.rid, doc.title, doc.description, mockupData);
     });
 }
 
-function addRowToTable(table, rid, title, description) {
+function addRowToTable(table, rid, title, description, mockupData) {
     const row = table.insertRow();
     const idCell = row.insertCell(0)
     const checkCell = row.insertCell(1)
@@ -80,6 +80,7 @@ function addRowToTable(table, rid, title, description) {
     checkbox.type = "checkbox";
     checkbox.name = "chkbox1";
     checkbox.id = "cbid";
+    checkbox.classList.add('check-box')
 
     checkCell.appendChild(checkbox)
     idCell.innerText = rid;
@@ -94,7 +95,7 @@ function addRowToTable(table, rid, title, description) {
     downloadButton.classList.add('dwn-btn');
     downloadButton.classList.add('btn', 'btn-secondary', 'btn-sm'); // Bootstrap secondary style
     downloadButton.innerHTML = `<svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>`
-    downloadButton.onclick = function () { fileDownload(this, table); }
+    downloadButton.onclick = function () { fileDownload(this, mockupData); }
     actionCell.style.width = '24px';
     checkCell.style.width = '10px';
 
@@ -168,11 +169,11 @@ function makeHeaderSticky() {
     }
 }
 
-function fileDownload(button, table) {
+function fileDownload(button, mockupData) {
     let td = button.parentElement;
     let tr = td.parentElement;
     console.log(tr.id)
-    let filename = table.rows[tr.id].cells[3].innerText;
+    let filename = mockupData[tr.id].title;
     let filetype = '.pdf';
     let downloadUrl = 'data:text/plain;charset=utf-8,' + encodeURIComponent('Hier ist der Inhalt der Datei');
 
