@@ -153,20 +153,6 @@ function updateCartCounter() {
 // Call updateCartCounter on page load to reflect the current state of the cart
 updateCartCounter();
 
-
-window.onscroll = function () { makeHeaderSticky() };
-
-let header = document.getElementById("mainHeader");
-// let sticky = header.offsetTop;
-
-function makeHeaderSticky() {
-    if (window.scrollY > sticky) {
-        header.classList.add("sticky");
-    } else {
-        header.classList.remove("sticky");
-    }
-}
-
 function fileDownload(button, mockupData) {
     let td = button.parentElement;
     let tr = td.parentElement;
