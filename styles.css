@@ -84,7 +84,7 @@ body {
 }
 
 #svgButtonContainer.visible {
-    max-height: 100px;
+    max-height: 150px;
     /* Adjust as per the content size */
     transition: max-height 0.25s ease-in;
 }
