@@ -1,0 +1,13 @@
+curl -X 'POST' \
+  'https://fi10x_deployment-1-x6838375.deta.app/subscribers/' \
+  -H 'accept: application/json' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "first_name": "Robin",
+  "last_name": "Testo",
+  "birthdate": "2000-12-06",
+  "street_adress": "Robin Str. 24",
+  "postal_code": "79968",
+  "city": "Köln",
+  "noticed": "testetstetstetstststststs"
+}'
