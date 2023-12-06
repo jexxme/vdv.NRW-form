@@ -23,6 +23,20 @@ body {
     align-items: center;
 }
 
+#filterButton {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+#filterButton svg {
+    width: 24px;
+    /* Adjust as needed */
+    height: 24px;
+    /* Adjust as needed */
+}
+
+
 #cartButton {
     background-color: transparent;
     border: none;
@@ -61,7 +75,26 @@ body {
     /* Adds space between the buttons */
     margin-left: 10px;
     margin-right: 10px;
+
+    /* Smooth animation */
+    overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+
 }
+
+#svgButtonContainer.visible {
+    max-height: 100px;
+    /* Adjust as per the content size */
+    transition: max-height 0.25s ease-in;
+}
+
+#svgButtonContainer.hidden {
+    max-height: 0;
+    transition: max-height 0.5s ease-out;
+}
+
+
 
 .svg-button {
     width: 100px;
@@ -123,26 +156,29 @@ body {
         /* Hide text on tablets */
     }
 
-    .svg-icon{
+    .svg-icon {
         height: 2em;
     }
 
     .description-column {
         display: none;
         /* Hide description column on tablets */
-    } 
+    }
 
     .desc-cell {
         display: none;
         /* Hide description column on tablets */
     }
-    .title-cell{
+
+    .title-cell {
         font-size: 16pt;
     }
+
     tr {
-       line-height: 60px;
-       
+        line-height: 60px;
+
     }
+
     .dwn-btn {
         height: 50px;
         width: 50px;
@@ -153,19 +189,22 @@ body {
         height: 50px;
         width: 50px;
     }
+
     #cartButton svg {
         width: 36px;
         /* Adjust as needed */
         height: 36px;
         /* Adjust as needed */
     }
+
     #cartCounter {
         margin-right: 10px;
 
         font-size: 14pt;
         text-align: center;
     }
-    .check-box{
+
+    .check-box {
         height: 20px;
         width: 20px;
     }

@@ -303,6 +303,22 @@ document.addEventListener('DOMContentLoaded', function () {
             // Retrieve the category from the data attribute
             const category = this.getAttribute('data-category');
             populateTable(category); // Call populateTable with the selected category
+            // hide the filter buttons
+            var container = document.getElementById('svgButtonContainer');
+            container.classList.add('hidden');
+            container.classList.remove('visible');
         });
     });
+});
+
+document.getElementById('filterButton').addEventListener('click', function () {
+    var container = document.getElementById('svgButtonContainer');
+    // Toggle the classes based on the presence of the 'visible' class
+    if (!container.classList.contains('visible')) {
+        container.classList.add('visible');
+        container.classList.remove('hidden');
+    } else {
+        container.classList.add('hidden');
+        container.classList.remove('visible');
+    }
 });
