@@ -63,6 +63,10 @@ body {
     /* Add more styling as needed */
 }
 
+/* Nerviger bottom margin */
+.alert {
+    margin-bottom: 0; /* Set to 0 to remove the margin */
+}
 
 /* CONTAINEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEER */
 #svgButtonContainer {

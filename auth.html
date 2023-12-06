@@ -63,6 +63,83 @@
     </header>
 
     <main>
+        
+
+
+    <!-- Shopping Cart Modal -->
+    <div class="modal fade" id="shoppingCartModal" tabindex="-1" aria-labelledby="shoppingCartModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="shoppingCartModalLabel">Warenkorb</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <!-- Shopping cart items will be added here -->
+                <div id="cartItemsList" class="list-group">
+                    <!-- Shopping cart items will be added here -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <!-- <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Zurück</button> -->
+                <button type="submit" class="btn btn-secondary" id="downloadButton">
+                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" fill="white"
+                        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                    </svg>
+                </button>
+                <button type="button" class="btn btn-primary">Zum Versand</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Age and Source Input Modal -->
+<div class="modal fade" id="ageInputModal" tabindex="-1" aria-labelledby="ageInputModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="ageInputModalLabel">Zusätzliche Informationen (optional)</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="additionalInfoForm">
+                    <!-- Age Input -->
+                    <div class="mb-3">
+                        <label for="userAge" class="form-label">Wie alt sind Sie? (optional):</label>
+                        <input type="number" class="form-control" id="userAge" placeholder="Ihr Alter">
+                    </div>
+
+                    <!-- Source Input -->
+                    <div class="mb-3">
+                        <label for="sourceInput" class="form-label">Wie haben sie von uns gehört?
+                            (optional):</label>
+                        <input type="text" class="form-control" id="sourceInput"
+                            placeholder="Freunde, Kollegen, Facebook, Google, Instagram...">
+                    </div>
+                    <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary">
+                            <svg class="svg-icon" xmlns="http://www.w3.org/2000/svg" height="1em"
+                                viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M288 32c0-17.7-14.3-32-32-32s-32 14.3-32 32V274.7l-73.4-73.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l128 128c12.5 12.5 32.8 12.5 45.3 0l128-128c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L288 274.7V32zM64 352c-35.3 0-64 28.7-64 64v32c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V416c0-35.3-28.7-64-64-64H346.5l-45.3 45.3c-25 25-65.5 25-90.5 0L165.5 352H64zm368 56a24 24 0 1 1 0 48 24 24 0 1 1 0-48z" />
+                            </svg>
+                            Download
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
         <div class="full-height">
             <div class="container w-100" style="max-width: 500px;">
                 <form class="bg-light p-5 pb-4 rounded-4">
@@ -92,7 +169,7 @@
 
                         <!-- Link Column -->
                         <div class="col d-flex justify-content-end">
-                            <a href="#!">Passwort vergessen?</a>
+                            <a href="#!">Passwort vergessen</a>
                         </div>
                     </div>
 
@@ -101,13 +178,13 @@
 
                     <!-- Register buttons -->
                     <div class="text-center ">
-                        <button type="button" class="btn btn-primary w-100 mb-1">Einloggen</button>
+                        <button type="button" class="btn btn-primary w-100 mb-1">Anmelden</button>
+                    </div>
+                    <div class="text-center ">
+                        <button type="button" class="btn btn-secondary w-100 mb-1">Registrieren</button>
                     </div>
                     <div class="text-center">
-                        <button type="button" class="btn btn-secondary w-100 mb-2">Als Gast bestellen</button>
-                    </div>
-                    <div class="text-center">
-                        <a href="#"> Account erstellen</a>
+                        <button type="button" class="btn btn-light w-100 mb-2">Als Gast bestellen</button>
                     </div>
                 </form>
             </div>
